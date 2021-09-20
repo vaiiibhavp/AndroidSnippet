@@ -70,6 +70,6 @@
     <string name="logout">Logout</string>
     <string name="profile_details">Profile Details</string>
     <string name="email">Email</string>
-    <string name="google_map_api_key">AIzaSyDhAtdpnBM6d5NnnI_icD5jV9KvDloB0GI</string>
+    <string name="google_map_api_key">**********_***********</string>
 
 </resources>
