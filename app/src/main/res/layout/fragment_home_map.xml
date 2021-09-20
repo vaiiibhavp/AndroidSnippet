@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/ivWedRing"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="5dp"
+                            android:padding="2dp"
+                            android:src="@drawable/dms_logo"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.example.demoapplication.mvp.view.TextViewCustomFont
+                            android:id="@+id/tvTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Bookings"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivWedRing"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/linToolbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.github.siyamed.shapeimageview.RoundedImageView
+                                android:id="@+id/ivProfileImg"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:elevation="5dp"
+                                android:scaleType="center"
+                                android:src="@drawable/ic_placeholder"
+                                android:visibility="visible"
+                                app:siBorderColor="@color/grayTitle"
+                                app:siBorderWidth="1dp"
+                                app:siRadius="30dp"
+                                app:siSquare="true" />
+
+
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.example.demoapplication.mvp.view.CustomeEditText
+                android:id="@+id/edtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edt_rounded_white_background"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-@.1234567890"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:drawablePadding="10dp"
+                android:elevation="10dp"
+                android:hint="@string/search_location"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+                android:paddingLeft="18dp"
+                android:paddingTop="10dp"
+                android:paddingRight="18dp"
+                android:paddingBottom="10dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlMyCurrentStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/rounded_white_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvRideStatusTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ride_status"
+                    android:textColor="@color/black_1" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvRideStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tvRideStatusTitle"
+                    android:layout_marginStart="1dp"
+                    android:text=" In Transit"
+                    android:textColor="@color/blue" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFont
+                    android:id="@+id/tvRideNumberTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/tvRideNumber"
+                    android:text="@string/ride_number" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvRideNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=" R-003"
+                    android:textColor="@color/blue" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFont
+                    android:id="@+id/tvBookingIdTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvRideStatusTitle"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/booking_id"
+                    android:textColor="@color/grayTitle" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvBookingId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvRideStatusTitle"
+                    android:layout_marginStart="2dp"
+                    android:layout_toEndOf="@+id/tvBookingIdTitle"
+                    android:text="B005"
+                    android:textColor="@color/black_1" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvCompanyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvBookingIdTitle"
+                    android:layout_marginEnd="100dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="TATA Motors Pvt. Ltd"
+                    android:textColor="@color/black_1"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/ivLocImg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/tvCompanyName"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/bottom_menu_location"
+                    app:tint="@color/blue" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvCompanyName"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="100dp"
+                    android:layout_toEndOf="@+id/ivLocImg"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Ipd, Chakan midc phase 2 varale khed - 410501"
+                    android:textColor="@color/black_1" />
+
+                <ImageView
+                    android:id="@+id/ivLocFromToImg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/ivLocImg"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/distance" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFont
+                    android:id="@+id/tvKm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivLocImg"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/ivLocFromToImg"
+                    android:text="10 Km"
+                    android:textColor="@color/grayTitle" />
+
+                <ImageView
+                    android:id="@+id/ivHrs"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/ivLocImg"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@+id/tvKm"
+                    android:src="@drawable/clock" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFont
+                    android:id="@+id/tvHrs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivLocImg"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/ivHrs"
+                    android:text="1.5 Hrs"
+                    android:textColor="@color/grayTitle" />
+
+                <ImageView
+                    android:id="@+id/ivMapImg"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_map" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relTotalRides"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_white_background"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/ivTotalRides"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/truck_light_orange" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvTotalRidesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/ivTotalRides"
+                    android:text="Today's Rides - "
+                    android:textColor="@color/black_1"
+                    android:textSize="18dp" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvTotalRides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/tvTotalRidesTitle"
+                    android:text=" 07"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFont
+                    android:id="@+id/tvTotalNosVisitTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivTotalRides"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/total_nos_visit"
+                    android:textColor="@color/grayTitle"
+                    android:visibility="gone" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvTotalNosVisit"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_below="@+id/tvTotalNosVisitTitle"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rounded_gray_background"
+                    android:gravity="center"
+                    android:text="03"
+                    android:textColor="@color/blue"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvCompanyName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTotalNosVisitTitle"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/tvTotalNosVisit"
+                    android:text="TATAT Motors Pvt. Ltd"
+                    android:textColor="@color/black_1"
+                    android:textSize="18dp" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFont
+                    android:id="@+id/tvAddress1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvCompanyName1"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/tvTotalNosVisit"
+                    android:drawableStart="@drawable/ic_location_on_black_24dp"
+                    android:drawableTint="@color/orange"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="TATAT Motors, Pimpri, Pune"
+                    android:textColor="@color/grayTitle"
+                    android:textSize="14dp" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFont
+                    android:id="@+id/tvViewMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvAddress1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="0dp"
+                    android:paddingTop="15dp"
+                    android:text="@string/view_more"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlTodaysRideListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_white_background"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ivTotalRides_"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/truck_light_orange" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvTotalRidesTitle_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/ivTotalRides_"
+                    android:text="Today's Rides - "
+                    android:textColor="@color/black_1"
+                    android:textSize="18dp" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFontBold
+                    android:id="@+id/tvTotalRides1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/tvTotalRidesTitle_"
+                    android:text=" 07"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp" />
+
+                <com.example.demoapplication.mvp.view.TextViewCustomFont
+                    android:id="@+id/tvTotalNosVisitTitle_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTotalRides1"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/total_nos_visit"
+                    android:textColor="@color/grayTitle"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTodaysRides"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTotalNosVisitTitle_" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

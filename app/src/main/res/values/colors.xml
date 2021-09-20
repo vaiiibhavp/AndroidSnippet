@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="orange">#ff7e00</color>
+    <color name="gray">#979797</color>
+
+    <color name="grayTitle">#979797</color>
+    <color name="blue">#148bc5</color>
+    <color name="black_1">#aa000000</color>
+
+    <color name="whiteash">#F0F0F0</color>
+
+    <color name="btnBGBlack">#3C3C3C</color>
+
+    <color name="red">#ED1909</color>
+    <color name="green">#09ED14</color>
+    <color name="blueish">#C0F8F2</color>
+
+    <color name="red_transperant">#70000000</color>
+    <color name="transperant">#00000000</color>
+
+    <color name="blueGradient">#9CD8F3</color>
+
+    <color name="orangeBottom">#FF5722</color>
+    <color name="grayBottom">#474444</color>
+
+    <color name="bgColor">#f0f0f0</color>
+
+    <color name="availableColor">#3eae4d</color>
+    <color name="intransitColor">#4bc0c0</color>
+    <color name="dwellColor">#ff6384</color>
+
+</resources>
