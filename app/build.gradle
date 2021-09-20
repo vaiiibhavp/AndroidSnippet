@@ -64,9 +64,7 @@ dependencies {
 
     implementation 'com.github.siyamed:android-shape-imageview:0.9.3@aar'
 
-    //timeline for showing from to distance
-    implementation 'com.lin:timeline:1.1@aar'
-    implementation 'com.lin:poweradapter:1.8@aar'
+
     //for upload image profile
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
 
@@ -85,11 +83,11 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation 'com.google.firebase:firebase-messaging:22.0.0'/*22.0.0'*/
 
-    implementation 'com.oguzbabaoglu:fancymarkers:0.2'
+
     implementation 'com.google.maps.android:android-maps-utils-v3:2.2.4'
 
     implementation 'com.google.maps:google-maps-services:0.2.9'
 
-    implementation 'com.mixpanel.android:mixpanel-android:5.0.0'
+
 
 }
